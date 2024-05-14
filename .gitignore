@@ -6,6 +6,7 @@
 
 *.obj
 *.bin
+*.cache
 
 
 /.vscode
@@ -28,3 +29,11 @@
 *.editorconfig
 *.pdb
 
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.force
+# User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
