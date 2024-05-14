@@ -1,5 +1,4 @@
 # Ignore obj folder
-obj/
 
 # Ignore compiled executables
 *.exe
@@ -25,29 +24,7 @@ obj/
 .fake
 
 *.json
-*.json
-/API/obj
-/API/obj/Debug
-/API/obj
-/Persistence/obj
-/Persistence/obj
-/API/obj
-/API/bin
-
 *.cache
 *.editorconfig
-*.cache
-*.json
 *.pdb
-*.dll
-*.pdb
-*.cache
-*.json
-*.json
-*.dll
-*.dll
-/API/obj
-/API/obj
-/API/obj
-/API/bin
-*.dll
+
