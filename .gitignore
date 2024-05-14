@@ -11,15 +11,24 @@ obj/
 
 /.vscode
 
-/Reactivities/Application/bin
-/Reactivities/Application/obj
+/Application/bin
+/Application/obj
 
-/Reactivities/Domain/bin
-/Reactivities/Domain/obj
+/Domain/bin
+/Domain/obj
 
-/Reactivities/Persistence/bin
-/Reactivities/Persistence/obj
+/Persistence/bin
+/Persistence/obj
 
-/Reactivities/API/bin
-/Reactivities/API/obj
+/API/bin
+/API/obj
 .fake
+
+*.json
+*.json
+/API/obj
+/API/obj/Debug
+/API/obj
+/Persistence/obj
+/Persistence/obj
+/API/obj
