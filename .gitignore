@@ -1,0 +1,25 @@
+# Ignore obj folder
+obj/
+
+# Ignore compiled executables
+*.exe
+*.dll
+
+*.obj
+*.bin
+
+
+/.vscode
+
+/Reactivities/Application/bin
+/Reactivities/Application/obj
+
+/Reactivities/Domain/bin
+/Reactivities/Domain/obj
+
+/Reactivities/Persistence/bin
+/Reactivities/Persistence/obj
+
+/Reactivities/API/bin
+/Reactivities/API/obj
+.fake
