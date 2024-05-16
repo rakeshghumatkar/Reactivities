@@ -23,7 +23,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.MapControllers();
-
 //Addiding SQL lite database 
 using var scope = app.Services.CreateScope();
 var service = scope.ServiceProvider;
