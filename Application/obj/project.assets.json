@@ -1174,11 +1174,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rghumatkar\\MyProject\\Reactivities\\Application\\Application.csproj",
+      "projectUniqueName": "D:\\MyProject\\Reactivities\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "C:\\Users\\Rghumatkar\\MyProject\\Reactivities\\Application\\Application.csproj",
+      "projectPath": "D:\\MyProject\\Reactivities\\Application\\Application.csproj",
       "packagesPath": "C:\\Users\\Rghumatkar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rghumatkar\\MyProject\\Reactivities\\Application\\obj\\",
+      "outputPath": "D:\\MyProject\\Reactivities\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Rghumatkar\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -1193,11 +1193,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Rghumatkar\\MyProject\\Reactivities\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\Rghumatkar\\MyProject\\Reactivities\\Domain\\Domain.csproj"
+            "D:\\MyProject\\Reactivities\\Domain\\Domain.csproj": {
+              "projectPath": "D:\\MyProject\\Reactivities\\Domain\\Domain.csproj"
             },
-            "C:\\Users\\Rghumatkar\\MyProject\\Reactivities\\Persistence\\Persistence.csproj": {
-              "projectPath": "C:\\Users\\Rghumatkar\\MyProject\\Reactivities\\Persistence\\Persistence.csproj"
+            "D:\\MyProject\\Reactivities\\Persistence\\Persistence.csproj": {
+              "projectPath": "D:\\MyProject\\Reactivities\\Persistence\\Persistence.csproj"
             }
           }
         }

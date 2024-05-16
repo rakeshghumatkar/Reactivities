@@ -1776,11 +1776,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rghumatkar\\MyProject\\Reactivities\\API\\API.csproj",
+      "projectUniqueName": "D:\\MyProject\\Reactivities\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\Rghumatkar\\MyProject\\Reactivities\\API\\API.csproj",
+      "projectPath": "D:\\MyProject\\Reactivities\\API\\API.csproj",
       "packagesPath": "C:\\Users\\Rghumatkar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rghumatkar\\MyProject\\Reactivities\\API\\obj\\",
+      "outputPath": "D:\\MyProject\\Reactivities\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Rghumatkar\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -1795,8 +1795,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Rghumatkar\\MyProject\\Reactivities\\Application\\Application.csproj": {
-              "projectPath": "C:\\Users\\Rghumatkar\\MyProject\\Reactivities\\Application\\Application.csproj"
+            "D:\\MyProject\\Reactivities\\Application\\Application.csproj": {
+              "projectPath": "D:\\MyProject\\Reactivities\\Application\\Application.csproj"
             }
           }
         }

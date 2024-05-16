@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Rghumatkar\\MyProject\\Reactivities\\Domain\\Domain.csproj": {}
+    "D:\\MyProject\\Reactivities\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Rghumatkar\\MyProject\\Reactivities\\Domain\\Domain.csproj": {
+    "D:\\MyProject\\Reactivities\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rghumatkar\\MyProject\\Reactivities\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\MyProject\\Reactivities\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Rghumatkar\\MyProject\\Reactivities\\Domain\\Domain.csproj",
+        "projectPath": "D:\\MyProject\\Reactivities\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Rghumatkar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rghumatkar\\MyProject\\Reactivities\\Domain\\obj\\",
+        "outputPath": "D:\\MyProject\\Reactivities\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Rghumatkar\\AppData\\Roaming\\NuGet\\NuGet.Config"

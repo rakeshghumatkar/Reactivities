@@ -9,3 +9,14 @@ C:\Users\Rghumatkar\MyProject\Reactivities\Domain\obj\Debug\net7.0\Domain.dll
 C:\Users\Rghumatkar\MyProject\Reactivities\Domain\obj\Debug\net7.0\refint\Domain.dll
 C:\Users\Rghumatkar\MyProject\Reactivities\Domain\obj\Debug\net7.0\Domain.pdb
 C:\Users\Rghumatkar\MyProject\Reactivities\Domain\obj\Debug\net7.0\ref\Domain.dll
+D:\MyProject\Reactivities\Domain\bin\Debug\net7.0\Domain.deps.json
+D:\MyProject\Reactivities\Domain\bin\Debug\net7.0\Domain.dll
+D:\MyProject\Reactivities\Domain\bin\Debug\net7.0\Domain.pdb
+D:\MyProject\Reactivities\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\MyProject\Reactivities\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
+D:\MyProject\Reactivities\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
+D:\MyProject\Reactivities\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
+D:\MyProject\Reactivities\Domain\obj\Debug\net7.0\Domain.dll
+D:\MyProject\Reactivities\Domain\obj\Debug\net7.0\refint\Domain.dll
+D:\MyProject\Reactivities\Domain\obj\Debug\net7.0\Domain.pdb
+D:\MyProject\Reactivities\Domain\obj\Debug\net7.0\ref\Domain.dll
