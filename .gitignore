@@ -1,0 +1,32 @@
+
+*.cache
+# Ignore obj folder
+
+# Ignore compiled executables
+*.exe
+*.dll
+
+*.obj
+*.bin
+*.cache
+
+
+/.vscode
+
+/Application/bin
+/Application/obj
+
+/Domain/bin
+/Domain/obj
+
+/Persistence/bin
+/Persistence/obj
+
+/API/bin
+/API/obj
+.fake
+
+*.cache
+*.editorconfig
+*.pdb
+
