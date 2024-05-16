@@ -1,3 +1,5 @@
+
+*.cache
 # Ignore obj folder
 
 # Ignore compiled executables
@@ -24,16 +26,7 @@
 /API/obj
 .fake
 
-*.json
 *.cache
 *.editorconfig
 *.pdb
 
-# User-specific files
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-*.force
-# User-specific files (MonoDevelop/Xamarin Studio)
-*.userprefs
