@@ -10,6 +10,19 @@
 *.userosscache
 *.sln.docstates
 
+# Project files
+/Application/bin
+/Application/obj
+
+/Domain/bin
+/Domain/obj
+
+/Persistence/bin
+/Persistence/obj
+
+/API/bin
+/API/obj
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
@@ -330,8 +343,7 @@ __pycache__/
 *.pyc
 
 # Cake - Uncomment if you are using it
-# tools/**
-!tools/packages.config
+
 
 # Tabs Studio
 *.tss
