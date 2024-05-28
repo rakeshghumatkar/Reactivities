@@ -3,53 +3,29 @@ import { Activity } from "../../../Models/Activity";
 import ActivityList from "./ActivityList";
 import ActivityDetails from "./details/ActivityDetails";
 import ActivityForm from "./form/ActivityForm";
-
-interface Prop {
-    activities: Activity[];
-    selectedActivity: Activity | undefined;
-    selectActivity: (Id: string) => void;
-    handleCancelActivity: () => void;
-    editMode: boolean;
-    openForm: (Id: string) => void;
-    closeForm: () => void;
-    editOrCreate: (activity: Activity) => void;
-    deleteActivity: (id: string) => void;
-}
+import { useStore } from "../../../stores/store";
+import { observer } from "mobx-react-lite";
 
 
-export function ActivityDashboard({
-    activities, selectedActivity, deleteActivity,
-    selectActivity, handleCancelActivity, editMode,
-    openForm, closeForm, editOrCreate }: Prop) {
+
+export default observer(function ActivityDashboard() {
+
+    const {activityStore} = useStore()
 
     return (
         <>
             <Grid>
                 <Grid.Column width="10">
-                    <ActivityList
-                        activities={activities}
-                        selectActivity={selectActivity}
-                        deleteActivity={deleteActivity}
-                    />
+                    <ActivityList />
                 </Grid.Column>
                 <Grid.Column width="6">
                     {
-                        selectedActivity && !editMode &&
-                        <ActivityDetails
-                            activity={selectedActivity}
-                            handleCancelActivity={handleCancelActivity}
-                            editMode={editMode}
-                            openForm={openForm}
-                            closeForm={closeForm}
-                        />
+                        activityStore.selectActivity && !activityStore.editMode &&
+                        <ActivityDetails/>
                     }
                     {
-                        editMode &&
-                        <ActivityForm
-                            closeForm={closeForm}
-                            selectedActivity={selectedActivity}
-                            editOrCreate={editOrCreate}
-                        />
+                        activityStore.editMode &&
+                        <ActivityForm />
                     }
 
                 </Grid.Column>
@@ -57,4 +33,4 @@ export function ActivityDashboard({
             </Grid>
         </>
     )
-}
+})
