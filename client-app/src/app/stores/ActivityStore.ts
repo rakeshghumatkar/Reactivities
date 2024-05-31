@@ -1,4 +1,4 @@
-import { makeAutoObservable, runInAction } from "mobx";
+import { keys, makeAutoObservable, runInAction } from "mobx";
 import { Activity } from "../Models/Activity";
 import agent from "../api/agent";
 import { v4 as uuid } from 'uuid';
@@ -20,6 +20,17 @@ export default class ActivityStore {
 
     get activitiesByDate() {
         return Array.from(this.activityRegistry.values()).sort((a: any, b: any) => Date.parse(a.date) - Date.parse(b.date));
+    }
+
+    get groupedActivities() {
+        return Object.entries(
+            this.activitiesByDate.reduce((activities, activity) => {
+                const date = activity.date;
+                if (date)
+                    activities[date] = activities[date] ? [...activities[date], activity] : [activity];
+                return activities;
+            }, {} as { [key: string]: Activity[] })
+        )
     }
 
     loadActivities = async () => {
