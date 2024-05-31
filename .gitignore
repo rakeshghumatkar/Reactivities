@@ -483,3 +483,6 @@ $RECYCLE.BIN/
 *.lnk
 client-app/.vite/
 API/reactivites.db-shm
+API/reactivites.db-shm
+API/reactivites.db-shm
+API/reactivites.db-wal
