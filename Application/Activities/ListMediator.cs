@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Application.Core;
 using Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -12,18 +13,18 @@ namespace Application.Activities
     public class ListMediator
     {
         //Command Query Responsibility Segregation (CQRS)
-        public class Query : IRequest<List<Activity>>{}
+        public class Query : IRequest<Result<List<Activity>>>{}
 
-        public class Handler : IRequestHandler<Query, List<Activity>>
+        public class Handler : IRequestHandler<Query, Result<List<Activity>>>
         {
             private readonly DataContext _context;
             public Handler(DataContext context)
             {
                 _context = context;
             }
-            public async Task<List<Activity>> Handle(Query request , CancellationToken cancelationTo) 
+            public async Task<Result<List<Activity>>> Handle(Query request , CancellationToken cancelationTo) 
             {
-                return await _context.Activities.ToListAsync();
+                return Result<List<Activity>>.Success(await _context.Activities.ToListAsync());
             }
         }
     }
