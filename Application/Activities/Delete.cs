@@ -1,15 +1,16 @@
+using Application.Core;
 using AutoMapper;
 using MediatR;
 using Persistence;
 
 public class Delete 
 {
-    public class Command : IRequest
+    public class Command : IRequest<Result<Unit>>
     {
         public Guid Id { get; set;}
     }
 
-    public class Handler : IRequestHandler<Command>
+    public class Handler : IRequestHandler<Command,Result<Unit>>
     {
         private readonly IMapper _mapper;
         private readonly DataContext _context;
@@ -19,11 +20,18 @@ public class Delete
             _mapper = mapper;
         }
 
-        public async Task Handle(Command request, CancellationToken cancellationToken)
+        public async Task<Result<Unit>> Handle(Command request, CancellationToken cancellationToken)
         {
             var activity = await _context.Activities.FindAsync(request.Id);
+            if (activity == null)
+               return null;
+
              _context.Activities.Remove(activity);
-             _context.SaveChangesAsync();
+            var result = await _context.SaveChangesAsync()>0;
+            if(!result)
+            return Result<Unit>.Failure("Fail to delete the record");
+            else
+            return Result<Unit>.Success(Unit.Value);
         }
     }
 }
