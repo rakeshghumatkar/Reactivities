@@ -28,7 +28,11 @@ namespace Application.Activities
                 var activity = await _context.Activities.FindAsync(request.Activity.Id);
                 if(activity == null)
                     return null;
+
+                // used the automapper to map the  request activity model with newly created activity model
+                // usage : rather than comparing and assigning each update field values we directly map all the field using autmapper
                 _mapper.Map(request.Activity, activity);
+                
                 var result = await _context.SaveChangesAsync()>0;
                 if(!result)
                     return Result<Unit>.Failure("Fail to edit the record");

@@ -9,7 +9,7 @@ namespace Application.Activities
     {
         public class Query : IRequest<Result<Activity>>  //return type
         {
-            public Guid Id { get; set; } //argument
+            public Guid Id { get; set; } //input
         }
 
         public class Handler : IRequestHandler<Query, Result<Activity>>

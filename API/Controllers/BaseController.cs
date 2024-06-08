@@ -22,7 +22,7 @@ namespace API.Controllers
             if (results == null)
                 return NotFound();
             else if (results.IsSuccess && results.Value != null)
-                return Ok(results.Value) ;
+                return Ok(results.Value);
             else if (results.IsSuccess && results.Value == null)
                 return NotFound();
             else
