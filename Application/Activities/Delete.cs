@@ -12,12 +12,10 @@ public class Delete
 
     public class Handler : IRequestHandler<Command,Result<Unit>>
     {
-        private readonly IMapper _mapper;
         private readonly DataContext _context;
-        public Handler(DataContext context, IMapper mapper)
+        public Handler(DataContext context)
         {
             _context = context;
-            _mapper = mapper;
         }
 
         public async Task<Result<Unit>> Handle(Command request, CancellationToken cancellationToken)
