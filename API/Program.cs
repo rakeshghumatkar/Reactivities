@@ -2,11 +2,22 @@ using Microsoft.EntityFrameworkCore;
 using Persistence;
 using API.Extensions;
 using API.Middleware;
+using Microsoft.AspNetCore.Identity;
+using Domain;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);  //created the krestal server to host the application
 
 //extension method
+
+builder.Services.AddControllers(opt=>{
+    var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+    opt.Filters.Add(new AuthorizeFilter(policy));
+});
 builder.Services.AddApplicationService(builder.Configuration);
+builder.Services.AddIdentityServices(builder.Configuration);
 var app = builder.Build();
 
 app.UseMiddleware<ExceptionMiddleware>();
@@ -19,6 +30,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
@@ -34,8 +47,9 @@ var service = scope.ServiceProvider;
 try 
 {
     var context = service.GetRequiredService<DataContext>();
+    var userManager = service.GetRequiredService<UserManager<AppUser>>();
     await context.Database.MigrateAsync();
-    await Seed.SeedData(context);
+    await Seed.SeedData(context, userManager);
 }
 catch (Exception ex)
 {
