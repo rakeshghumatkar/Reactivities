@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Security.Claims;
 using API.DTOs;
 using API.Services;
 using Domain;
@@ -12,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    [AllowAnonymous]
+   
     [ApiController]
     [Route("api/[controller]")]
     public class AccountController : ControllerBase
@@ -25,7 +22,7 @@ namespace API.Controllers
             _tokenService = tokenService;
             _userManager = userManager;
         }
-
+        [AllowAnonymous]
         [HttpPost("login")]
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {
@@ -36,46 +33,60 @@ namespace API.Controllers
             var result = await _userManager.CheckPasswordAsync(user, loginDto.Password);
             if(result)
             {
-
-                return new UserDto{
-                    DisplayName = user.DisplayName,
-                    Token = _tokenService.CreateToken(user),
-                    Username = user.UserName,
-                    Image = null,
-                };
+                return CreateUserObject(user);
             }
             return Unauthorized();
         }
 
-
+        [AllowAnonymous]
         [HttpPost("Register")]
         public async Task<ActionResult<UserDto>> Register (RegisterDto registerDto)
         {
+            if(await _userManager.Users.AnyAsync(u => u.Email == registerDto.Email))
+            {
+                return BadRequest("Email is already taken");
+            }
             if(await _userManager.Users.AnyAsync(u => u.UserName == registerDto.UserName))
             {
-                return BadRequest("Duplicate user");
+                return BadRequest("Username is already taken");
             }
             var user = new AppUser{
                 UserName = registerDto.UserName,
                 Email = registerDto.Email,
-                // Image = null,
-                DisplayName = registerDto.UserName
+                Image = "",
+                DisplayName = registerDto.UserName,
+                Bio = ""
             };
 
             var result = await _userManager.CreateAsync(user, registerDto.Password);
 
             if(result.Succeeded)
             {
-                return new UserDto{
-                    DisplayName = registerDto.UserName,
-                    Username = registerDto.UserName,
-                    Token = _tokenService.CreateToken(user),
-                    Image = null,
-                };
+                return CreateUserObject( user);
             }
 
-            return BadRequest("Error in registeration");
+            return BadRequest(result.Errors);
+        }
 
+        
+
+        [Authorize]
+        [HttpGet]
+        public async Task<ActionResult<UserDto>> GetCurrentUser()
+        {
+            var user = await _userManager.FindByEmailAsync(User.FindFirstValue(ClaimTypes.Email));
+            return CreateUserObject(user);
+        }
+
+        private UserDto CreateUserObject( AppUser user)
+        {
+            return new UserDto
+            {
+                DisplayName = user.UserName,
+                Username = user.UserName,
+                Token = _tokenService.CreateToken(user),
+                Image = "",
+            };
         }
     }
 }

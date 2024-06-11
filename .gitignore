@@ -482,3 +482,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 client-app/.vite/
+API/obj/project.assets.json
