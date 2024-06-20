@@ -1,12 +1,5 @@
-using Microsoft.EntityFrameworkCore;
-using Persistence;
 using API.Extensions;
 using API.Middleware;
-using Microsoft.AspNetCore.Identity;
-using Domain;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);  //created the krestal server to host the application
 
