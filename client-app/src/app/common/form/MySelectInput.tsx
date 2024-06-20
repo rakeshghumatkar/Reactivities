@@ -5,7 +5,8 @@ interface Props {
     placeholder: string;
     name: string;
     label?: string;
-    options: any;
+    options?: any;
+    type?: string;
 }
 
 const MySelectInput = (props: Props) => {
